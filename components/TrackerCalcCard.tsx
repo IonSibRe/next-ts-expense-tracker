@@ -3,8 +3,8 @@ import styles from "../styles/Home.module.scss";
 
 type Props = {
 	expenseData: {
-		income: Number;
-		expense: Number;
+		income: number;
+		expense: number;
 	};
 };
 
@@ -18,7 +18,7 @@ const TrackerCalcCard = ({ expenseData }: Props): ReactElement => {
 			>
 				<h3 className={styles.trackerExpenseCalcDesc}>income</h3>
 				<h3
-					className={`${styles.trackerExpenseCalcMoney} ${styles.trackerExpenseCalcIncomeMoney}`}
+					className={`${styles.trackerExpenseCalcMoney} ${styles.trackerExpenseIncome}`}
 				>
 					${income}
 				</h3>
@@ -28,9 +28,9 @@ const TrackerCalcCard = ({ expenseData }: Props): ReactElement => {
 			>
 				<h3 className={styles.trackerExpenseCalcDesc}>expense</h3>
 				<h3
-					className={`${styles.trackerExpenseCalcMoney} ${styles.trackerExpenseCalcExpenseMoney}`}
+					className={`${styles.trackerExpenseCalcMoney} ${styles.trackerExpenseExpense}`}
 				>
-					${expense}
+					${expense === 0 ? expense : expense.toString().substring(1)}
 				</h3>
 			</div>
 		</div>

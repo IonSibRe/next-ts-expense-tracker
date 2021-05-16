@@ -45,3 +45,9 @@ $light-col: #fff;
 	justify-content: center;
 	align-items: center;
 }
+
+@media screen and (max-width: 700px) {
+	.sectionCenter {
+		width: 100%;
+	}
+}

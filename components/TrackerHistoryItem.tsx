@@ -1,21 +1,28 @@
 import styles from "../styles/Home.module.scss";
-import { ReactElement } from "react";
+import { Key, ReactElement } from "react";
 
 type Props = {
 	data: {
-		name: string;
-		money: Number;
+		id: Key;
+		title: string;
+		amount: number;
 	};
 };
 
 const TrackerHistoryItem = ({ data }: Props): ReactElement => {
-	const { name, money } = data;
+	const { title, amount } = data;
 	return (
-		<div className={styles.trackerHistoryItem}>
-			<p className={styles.trackerHistoryItemDesc}>{name}</p>
+		<div
+			className={`${styles.trackerHistoryItem} ${
+				amount >= 0
+					? styles.trackerHistoryItemIncome
+					: styles.trackerHistoryItemExpense
+			}`}
+		>
+			<p className={styles.trackerHistoryItemDesc}>{title}</p>
 			<p className={styles.trackerHistoryItemDesc}>
-				{money >= 0 ? "+" : "-"}
-				{money}
+				{amount >= 0 && "+"}
+				{amount}
 			</p>
 		</div>
 	);

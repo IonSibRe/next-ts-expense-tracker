@@ -1,19 +1,32 @@
 @import "./config";
 
 // =============== Home Page ===============
+.homeSection {
+	height: 100vh;
+}
+
+// Income
+.trackerExpenseIncome {
+	color: #28e17d;
+}
+
+// Expense
+.trackerExpenseExpense {
+	color: #f00f19;
+}
 
 // Tracker Card
 .trackerCard {
-	margin: 4rem 0;
 	padding: 2rem;
 	background-color: #f4f4f4;
+	box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.25);
 
 	// Title
 	.trackerSubtitle {
 		margin-bottom: 0.5rem;
 		font-size: $h2-size - 1rem;
 		font-weight: $font-lite;
-		text-transform: uppercase;
+		text-transform: capitalize;
 	}
 
 	.trackerTitleWrap {
@@ -69,30 +82,77 @@
 			font-weight: $font-semi-bold;
 			text-transform: uppercase;
 		}
-
-		// Income
-		.trackerExpenseCalcIncomeMoney {
-			color: #28e17d;
-		}
-
-		// Expense
-		.trackerExpenseCalcExpenseMoney {
-			color: #f00f19;
-		}
 	}
 
 	// History
-	.trackerHistoryItem {
-		display: flex;
-		justify-content: space-between;
-		margin: 1rem 0;
-		padding: 0.5rem;
-		background-color: #fff;
-		box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.25);
+	.trackerHistoryWrap {
+		margin-bottom: 2rem;
+
+		.trackerHistoryTitleWrap {
+			margin-bottom: 1.5rem;
+		}
+
+		.trackerHistoryItem {
+			display: flex;
+			justify-content: space-between;
+			margin-bottom: 1rem;
+			padding: 0.5rem;
+			background-color: #fff;
+			box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.25);
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		.trackerHistoryItemIncome {
+			border-right: 5px solid #28e17d;
+		}
+
+		.trackerHistoryItemExpense {
+			border-right: 5px solid #f00f19;
+		}
 
 		.trackerHistoryItemDesc {
 			font-size: $p-size;
 			text-transform: capitalize;
+		}
+	}
+
+	// Add New Transaction
+	.trackerAddTransactionTitleWrap {
+		margin-bottom: 1.5rem;
+	}
+
+	.trackerAddTransactionItemDesc {
+		font-size: $h4-size - 0.75rem;
+		font-weight: $font-lite;
+	}
+
+	.trackerAddTransactionItemText {
+		font-size: $p-size;
+	}
+
+	.trackerAddTransactionItemInput {
+		width: 100%;
+		margin: 1rem 0;
+		padding: 0.5rem 0 0.5rem 0.5rem;
+		border: 1px solid #ccc;
+		outline: none;
+	}
+
+	.trackerSubmitBtn {
+		width: 100%;
+		padding: 0.75rem 0;
+		text-transform: capitalize;
+		color: $light-col;
+		background-color: rgb(18, 165, 202);
+		border: none;
+		outline: none;
+		cursor: pointer;
+
+		&:hover {
+			opacity: 0.9;
 		}
 	}
 }
